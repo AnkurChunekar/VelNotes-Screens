@@ -1,0 +1,94 @@
+.top-nav {
+  box-shadow: 0 2px 2px lightgray;
+}
+
+.top-nav .brand-container {
+  width: 270px;
+  padding: 2rem;
+  color: white;
+  background-color: #334150;
+  border-bottom: solid 2px #666666;
+  flex-shrink: 0;
+}
+
+.top-nav .brand-logo {
+  width: 26px;
+  margin-right: 1rem;
+  border-radius: 6px;
+}
+
+.top-nav .brand,
+.top-nav .ham-icon {
+  font-size: 2rem;
+}
+
+.top-nav .ham-icon:hover {
+  color: white;
+}
+
+.btn-unset {
+  background-color: transparent;
+}
+
+.top-nav .input-wrapper {
+  position: relative;
+  max-width: 500px;
+  justify-self: center;
+}
+
+.top-nav .input-w-btn input {
+  margin-left: 3rem;
+  width: 100%;
+  border: solid 1.5px lightgray;
+  border-radius: 5px;
+}
+
+.top-nav .input-wrapper .search-icon {
+  position: absolute;
+  right: -20px;
+  top: 1px;
+  color: gray;
+}
+
+.top-nav .user-profile {
+  margin-left: auto;
+  padding-right: 3rem;
+  flex-shrink: 0;
+}
+
+.top-nav .profile-img {
+  width: 30px;
+}
+
+/* Notes Page */
+
+.notes-page {
+  height: 90vh;
+}
+
+.side-nav {
+  width: 270px;
+  height: calc(100vh - 66px);
+  background-color: #334150;
+  color: white;
+  padding-top: 1rem;
+}
+
+.side-nav .item {
+  padding: 2rem;
+  display: flex;
+  column-gap: 2.5rem;
+  align-items: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.side-nav .item.active {
+  background-color: #3f4d5b;
+  border-left: solid 5px #4e95ff;
+}
+
+.side-nav .item:hover {
+  background-color: #3f4d5b;
+  border-left: solid 5px #a2b5d1;
+}
