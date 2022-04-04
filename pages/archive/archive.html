@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/pages/notes/notes.css" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://velocity-practice.netlify.app/css/components.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/363a225f08.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="flex page-container">
+      <nav class="side-nav flex flex-column">
+        <div class="brand-container flex ai-center jc-space-b">
+          <div class="nav-brand flex flex-center">
+            <img class="brand-logo" src="/assets/logo.jpg" alt="Brand Logo" />
+            <a class="brand fw-600"> VelNotes </a>
+          </div>
+
+          <button class="ham-icon btn-unset gray-text">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+
+        <a href="/pages/notes/notes.html" class="item a-unset">
+          <span>
+            <i class="fa-solid fa-lightbulb"></i>
+          </span>
+          <span class="text"> Notes </span>
+        </a>
+
+        <div class="item active">
+          <span>
+            <i class="fa-solid fa-box-archive"></i>
+          </span>
+          <span class="text"> Archive </span>
+        </div>
+
+        <div id="label-modal-show" class="item">
+          <span>
+            <i class="fa-solid fa-pen"></i>
+          </span>
+          <span class="text"> Edit Labels </span>
+        </div>
+
+        <a href="/pages/trash.html" class="item a-unset">
+          <span>
+            <i class="fa-solid fa-trash"></i>
+          </span>
+          <span class="text"> Trash </span>
+        </a>
+
+        <a href="/pages/authentication/login.html" class="item a-unset">
+          <span>
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </span>
+          <span class="text"> Logout </span>
+        </a>
+
+        <!-- Edit Label Modal -->
+
+        <div id="label-modal" class="modal-container flex-center">
+          <div class="modal label-modal m-md1">
+            <div class="edit-labels p-md1">
+              <span class="fs-4"> Edit Labels </span>
+              <div class="input-wrapper input-w-btn m-xs m-rl0">
+                <input type="text" class="p-xxs" placeholder="New Label..." />
+                <button class="p-xxs btn-unset icon">
+                  <i class="fas fa-check fs-4"></i>
+                </button>
+              </div>
+
+              <ul class="list">
+                <li class="flex ai-center jc-space-b">
+                  <span class="fs-5 fw-600"> Work</span>
+                  <button class="p-xs btn-unset icon">
+                    <i class="fas fa-times fs-4"></i>
+                  </button>
+                </li>
+                <li class="flex ai-center jc-space-b">
+                  <span class="fs-5 fw-600">Study</span>
+                  <button class="p-xs btn-unset icon">
+                    <i class="fas fa-times fs-4"></i>
+                  </button>
+                </li>
+                <li class="flex ai-center jc-space-b">
+                  <span class="fs-5 fw-600">Travel</span>
+                  <button class="p-xs btn-unset icon">
+                    <i class="fas fa-times fs-4"></i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <footer class="p-xs">
+              <button id="label-modal-close" class="btn btn-secondary btn-outline">Done</button>
+            </footer>
+          </div>
+
+        </div>
+
+        <!-- Edit Label Modal -->
+
+      </nav>
+
+      <!-- Header for notes -->
+
+      <main class="notes-page w-100pc">
+        <header class="page-header flex jc-space-b p-s">
+          <div class="input-wrapper bd-rad-sm input-w-btn">
+            <input
+              type="text"
+              class="p-xxs"
+              placeholder="Search All Notes here.."
+            />
+            <button class="p-xxs btn-unset search-icon">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+
+          <button class="user-profile btn-unset flex">
+            <div class="flex flex-column ai-end jc-center m-xs m-tb0">
+              <span class="gray-text fs-6"> Welcome </span>
+              <span> Ankur Chunekar <i class="fas fa-caret-down"></i> </span>
+            </div>
+
+            <img
+              class="profile-img"
+              src="https://avatars.githubusercontent.com/u/89077985?v=4"
+              alt="user profile"
+            />
+          </button>
+        </header>
+
+        <section class="notes-header flex">
+          <h1 class="fw-600 fs-2">
+            Archive <span class="gray-text fs-3">(3)</span>
+          </h1>
+
+          <div class="m-left-auto">
+            <button id="create-note-show" class="btn btn-primary">
+              <i class="fas fa-plus"></i> Create New Note
+            </button>
+          </div>
+
+          <div id="create-note-modal" class="modal-container flex-center">
+            <div class="modal create-note-modal m-md1">
+              <header class="p-md1">
+                <div class="modal-title fs-3 fw-600 icon">Create Note</div>
+                <button id="create-note-close" class="btn-unset">
+                  <i class="fas fa-times fs-4"></i>
+                </button>
+              </header>
+              <section class="modal-body flex flex-column p-md1 p-tb0">
+                <input type="text" placeholder="Title...." class="title" />
+                <textarea
+                  placeholder="Note Content Here.."
+                  class="content m-xs m-rl0"
+                ></textarea>
+              </section>
+
+              <section
+                class="options-container flex ai-center jc-space-b flex-wrap p-md1"
+              >
+                <div>
+                  <label for="priority">Label: </label>
+                  <select name="priority" id="priority">
+                    <option value="work">Work</option>
+                    <option value="home">Home</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="priority">Color: </label>
+                  <select name="priority" id="priority">
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="priority">Priority: </label>
+                  <select name="priority" id="priority">
+                    <option value="high">High</option>
+                    <option value="low">Low</option>
+                  </select>
+                </div>
+              </section>
+
+              <footer class="modal-actions p-md1">
+                <button class="btn btn-primary">
+                  <i class="fas fa-plus"></i> Create Note
+                </button>
+              </footer>
+            </div>
+          </div>
+        </section>
+
+        <section class="notes-filters flex ai-center jc-space-b">
+          <div class="chips-container flex">
+            <button class="chip active">All</button>
+
+            <button class="chip">Work</button>
+
+            <button class="chip">Study</button>
+
+            <button class="chip">Travel</button>
+          </div>
+
+          <div class="filter-container">
+            <button id="filter-btn" class="filter-btn">
+              <i class="fa-solid fa-arrow-up-wide-short"></i>
+              <span class="m-xxs m-tb0 fs-4"> Filters </span>
+            </button>
+
+            <div id="filters-menu" class="filter-menu p-s">
+              <header class="flex ai-center jc-space-b">
+                <h3 class="fw-600">Filters</h3>
+                <button class="btn btn-primary btn-outline">Clear</button>
+              </header>
+
+              <section>
+                <h5 class="fw-600 m-s m-rl0">Priority</h5>
+                <div class="radio m-xs">
+                  <input type="radio" name="priority" id="low-to-high" />
+                  <label for="low-to-high">Low To High</label>
+                </div>
+
+                <div class="radio m-xs">
+                  <input type="radio" name="priority" id="high-to-low" />
+                  <label for="high-to-low"> High To Low </label>
+                </div>
+              </section>
+
+              <section>
+                <h5 class="fw-600 m-s m-rl0">Date of Updation</h5>
+                <div class="radio m-xs">
+                  <input type="radio" name="date" id="new" />
+                  <label for="new">Newest First</label>
+                </div>
+
+                <div class="radio m-xs">
+                  <input type="radio" name="date" id="old" />
+                  <label for="old"> Oldest First </label>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section class="notes-section">
+          <h2 class="fw-400 fs-5 m-xs m-rl0 gray-text">Archived Notes.</h2>
+
+          <div class="notes-container">
+            <div class="note flex flex-column">
+              <header class="flex ai-center jc-space-b">
+                <h2 class="title fw-600 fs-3">My Notes</h2>
+                <button title="Pin" class="btn-unset">
+                  <i class="icon fa-solid fa-map-pin"></i>
+                </button>
+              </header>
+              <p class="content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Assumenda quibusdam molestiae, vitae natus, placeat voluptate
+                quisquam voluptatem ullam illum quam tempora officia sapiente
+                perspiciatis. Iure alias ratione vitae delectus molestiae?natus,
+                placeat voluptate quisquam voluptatem ullam illum quam tempora
+                officia sapiente perspiciatis. Iure alias ratione vitae delectus
+                molestiae?
+              </p>
+              <footer class="footer flex ai-center jc-space-b">
+                <div class="date">02/04/2020</div>
+                <div class="actions">
+                  <button title="Delete" class="btn-unset">
+                    <i class="icon fa-solid fa-trash"></i>
+                  </button>
+
+                  <button title="Edit" class="btn-unset">
+                    <i class="icon fa-solid fa-pen-to-square"></i>
+                  </button>
+
+                  <button title="Archive" class="btn-unset">
+                    <i class="icon fa-solid fa-box-archive"></i>
+                  </button>
+                </div>
+              </footer>
+            </div>
+
+            <div class="note flex flex-column">
+              <header class="flex ai-center jc-space-b">
+                <h2 class="title fw-600 fs-3">My Notes</h2>
+                <button title="Pin" class="btn-unset">
+                  <i class="icon fa-solid fa-map-pin"></i>
+                </button>
+              </header>
+              <p class="content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Assumenda quibusdam molestiae, vitae natus, placeat voluptate
+                quisquam voluptatem ullam illum quam tempora officia sapiente
+                perspiciatis. Iure alias ratione vitae delectus molestiae?natus,
+                placeat voluptate quisquam voluptatem ullam illum quam tempora
+                officia sapiente perspiciatis. Iure alias ratione vitae delectus
+                molestiae?
+              </p>
+              <footer class="footer flex ai-center jc-space-b">
+                <div class="date">02/04/2020</div>
+                <div class="actions">
+                  <button title="Delete" class="btn-unset">
+                    <i class="icon fa-solid fa-trash"></i>
+                  </button>
+
+                  <button title="Edit" class="btn-unset">
+                    <i class="icon fa-solid fa-pen-to-square"></i>
+                  </button>
+
+                  <button title="Archive" class="btn-unset">
+                    <i class="icon fa-solid fa-box-archive"></i>
+                  </button>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/index.js"></script>
+  </body>
+</html>
