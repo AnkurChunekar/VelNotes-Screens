@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link
+      rel="stylesheet"
+      href="https://velocity-practice.netlify.app/css/components.css"
+    />
+    <link rel="stylesheet" href="authentication.css" />
+
+    <script
+      src="https://kit.fontawesome.com/3582c9ec8a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+
+   
+    <main class="main-container flex ai-start jc-center">
+        <form
+          class="authentication-container flex flex-column ai-left p-md2 m-xs"
+        >
+          <h1 class="title m-s m-rl0 fs-3 fw-600">Log in</h1>
+          <div class="input-wrapper m-xxxs m-rl0">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              placeholder="johndoe@gmail.com"
+              class="input p-xxs m-xxs m-rl0 bd-rad-sm"
+            />
+            <label class="success-msg m-xxs m-rl0">
+              Success! Email entered is correct.
+            </label>
+          </div>
+          <div class="input-wrapper m-xxxs m-rl0">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="input p-xxs m-xxs m-rl0 bd-rad-sm"
+              placeholder="password"
+            />
+            <label class="error-msg m-xxs m-rl0">
+              Wrong Password. Try again.
+            </label>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary m-xxs m-rl0"
+          >
+            LOGIN
+          </button>
+          <p class="m-xxs m-rl0 center-align-text gray-text">
+            New User?
+            <a
+              class="primary-color-text"
+              href="/pages/signup/signup.html"
+            >
+              Sign Up!
+            </a>
+            .
+          </p>
+          <a
+            href=""
+            class="primary-color-text center-align-text m-xxs m-rl0"
+          >
+            Use Guest Credentials.
+          </a>
+        </form>
+      </main>
+
+
+
+  </body>
+</html>
