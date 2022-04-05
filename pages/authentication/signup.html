@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Signup </title>
+
+    <link
+      rel="stylesheet"
+      href="https://velocity-practice.netlify.app/css/components.css"
+    />
+    <link rel="stylesheet" href="authentication.css" />
+
+    <script
+      src="https://kit.fontawesome.com/3582c9ec8a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+
+    <main class="main-container flex ai-start jc-center">
+        <form
+          class="authentication-container flex flex-column ai-left p-md2 m-xs"
+        >
+          <h1 class="title m-s m-rl0 fs-3 fw-600">Sign up</h1>
+          <div class="input-wrapper m-xxxs m-rl0">
+            <label for="email">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="John Doe"
+              class="input p-xxs m-xxs m-rl0 bd-rad-sm"
+            />
+          </div>
+          <div class="input-wrapper m-xxxs m-rl0">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              placeholder="johndoe@gmail.com"
+              class="input p-xxs m-xxs m-rl0 bd-rad-sm"
+            />
+            <label class="success-msg m-xxs m-rl0">
+              Success! Email entered is correct.
+            </label>
+          </div>
+          <div class="input-wrapper m-xxxs m-rl0">
+            <label for="password">Password</label>
+            <div
+              class="input-wrapper bd-rad-sm input-w-btn flex flex-row ai-center m-xxs m-rl0"
+            >
+              <input
+                type="text"
+                class="p-xxs input"
+                placeholder="password"
+              />
+              <div class="p-xxs gray-text input-btn">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+            </div>
+            <label class="error-msg">
+              Wrong Password. Try again.
+            </label>
+          </div>
+          <div class="input-wrapper m-xxs m-rl0">
+            <label class="" for="password">
+              Confirm Password
+            </label>
+            <div
+              class="input-wrapper bd-rad-sm input-w-btn flex flex-row ai-center m-xxs m-rl0"
+            >
+              <input
+                type="text"
+                class="p-xxs input"
+                placeholder="confirm password"
+              />
+              <div class="p-xxs gray-text input-btn">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+            </div>
+            <label class="error-msg">
+              Passwords do not match.
+            </label>
+          </div>
+          <p class="m-xxs m-rl0 gray-text fs-6">
+            By signing up, you agree to our terms and conditions.
+          </p>
+          <button
+            type="submit"
+            class="btn btn-primary m-xxs m-rl0"
+          >
+            Sign Up
+          </button>
+          <p class="m-xxs m-rl0 center-align-text gray-text">
+            Already a User?
+            <a
+              class="primary-color-text"
+              href="/pages/Login/Login.html"
+            >
+              Log in
+            </a>
+          </p>
+        </form>
+      </main>
+      
+
+
+
+  </body>
+</html>

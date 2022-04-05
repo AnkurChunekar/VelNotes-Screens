@@ -1,3 +1,12 @@
+/* utilities */
+
+.a-unset {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Homepage */
+
 .notes-homepage {
   margin: 4rem auto 0;
   max-width: 1440px;
