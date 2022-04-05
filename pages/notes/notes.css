@@ -53,17 +53,16 @@
 }
 
 .side-nav .item {
-  padding: 2rem;
+  padding: 1.8rem;
   display: flex;
   column-gap: 2.5rem;
   align-items: center;
-  font-size: 1.8rem;
   cursor: pointer;
 }
 
 .side-nav .item.active {
   background-color: var(--side-nav-hover-bg);
-  border-left: solid 5px #4e95ff;
+  border-left: solid 4px #4e95ff;
 }
 
 .side-nav .item:hover {
@@ -125,7 +124,7 @@
 }
 
 .notes-header {
-  padding: 3rem;
+  padding: 2.5rem;
   border-bottom: solid 1px var(--plain-lightgray);
   background-color: var(--plain-white);
 }
@@ -165,7 +164,7 @@
   background-color: var(--plain-white);
   top: 85%;
   border-radius: 5px;
-  border: solid 2px var(--plain-lightgray);
+  border: solid 1.5px var(--plain-lightgray);
   right: 28px;
   height: fit-content;
   visibility: hidden;
@@ -194,7 +193,7 @@
 /* Note */
 
 .note {
-  height: 300px;
+  height: 280px;
   border-radius: 5px;
   background-color: var(--plain-white);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -207,7 +206,7 @@
 }
 
 .note .icon {
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: gray;
 }
 
@@ -222,6 +221,10 @@
   text-overflow: ellipsis;
 }
 
+.note .title {
+  font-size: var(--font-size-h4);
+}
+
 .note .content {
   height: auto;
   overflow: hidden;
@@ -230,11 +233,15 @@
   -webkit-box-orient: vertical;
   margin-top: 1rem;
   line-height: 1.4;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .note .footer {
   margin-top: auto;
+}
+
+.note .date {
+  font-size: 1.3rem;
 }
 
 /* Create Note Modal */
